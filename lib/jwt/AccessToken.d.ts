@@ -132,6 +132,21 @@ declare namespace AccessToken {
     room?: string
   }
 
+  export interface PlayerGrantOptions {
+    playbackGrant?: Record<string, any>
+  }
+
+  export interface PlayerGrantPayload {
+    playbackGrant?: Record<string, any>
+  }
+
+  export class PlayerGrant extends Grant<
+      PlayerGrantOptions,
+      PlayerGrantPayload,
+      'player'> implements PlayerGrantOptions {
+    playbackGrant?: Record<string, any>
+  }
+
   export interface SyncGrantOptions {
     serviceSid?: string;
     endpointId?: string;
